@@ -1,6 +1,6 @@
 ### NiceToast
 
-[1]
+![1]
 ```
 compile 'com.rairmmd.nicetoast:library:1.0.0'
 ```
@@ -17,4 +17,4 @@ NiceToast.newNiceToast(this)
          .isRound(false)//圆的
          .show();
 ```
-![1]http://chuantu.biz/t6/124/1509767259x1966967087.gif
+[1]:http://chuantu.biz/t6/124/1509767259x1966967087.gif
