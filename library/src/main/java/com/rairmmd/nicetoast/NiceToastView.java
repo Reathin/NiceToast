@@ -28,7 +28,7 @@ import com.rarimmd.nicetoast.R;
  * @author Rair
  * @date 2017/11/2
  * <p>
- * desc:
+ * desc:Toast View
  */
 
 class NiceToastView extends RelativeLayout {
@@ -38,7 +38,7 @@ class NiceToastView extends RelativeLayout {
     private ImageView leftImage;
     private RelativeLayout rlLayout;
     private LinearLayout llContent, llContentMain;
-    private int width;
+    private int width = 240;
     private boolean constainWidth = false;
     private boolean show = false;
 
@@ -58,14 +58,20 @@ class NiceToastView extends RelativeLayout {
     }
 
     private void assignUiElements() {
-        width = dp2Pixel(context, 200);
+        width = dp2Pixel(context, width);
         leftImage = findViewById(R.id.left_image);
         tvMsg = findViewById(R.id.tv_msg);
         rlLayout = findViewById(R.id.rl_layout);
         llContentMain = findViewById(R.id.ll_content_main);
         rlLayout.setAlpha(0f);
         llContent = findViewById(R.id.ll_content);
+    }
 
+    public NiceToastView setWidth(int width) {
+        rlLayout.getLayoutParams().width = dp2Pixel(context, width);
+        rlLayout.requestLayout();
+        this.width = width;
+        return this;
     }
 
     public NiceToastView setColor(int color) {
@@ -84,7 +90,7 @@ class NiceToastView extends RelativeLayout {
         return this;
     }
 
-    public NiceToastView setScaleTypeIcon(ImageView.ScaleType scaleTypeIcon) {
+    public NiceToastView setScaleType(ImageView.ScaleType scaleTypeIcon) {
         leftImage.setScaleType(scaleTypeIcon);
         return this;
     }
@@ -96,11 +102,6 @@ class NiceToastView extends RelativeLayout {
 
     public NiceToastView setTextColor(int color) {
         tvMsg.setTextColor(color);
-        return this;
-    }
-
-    public NiceToastView setWidth(int width) {
-        this.width = dp2Pixel(context, width);
         return this;
     }
 
@@ -139,7 +140,7 @@ class NiceToastView extends RelativeLayout {
                     });
                     anim.setDuration(600);
                     anim.start();
-                    aplyAlpha(tvMsg, 800, 1, new Animator.AnimatorListener() {
+                    aplyAlpha(tvMsg, 700, 1, new Animator.AnimatorListener() {
                         @Override
                         public void onAnimationStart(Animator animator) {
 

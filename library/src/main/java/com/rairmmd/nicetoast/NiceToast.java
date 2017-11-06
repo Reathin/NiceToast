@@ -1,6 +1,7 @@
 package com.rairmmd.nicetoast;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,7 @@ import com.rarimmd.nicetoast.R;
  * @author Rair
  * @date 2017/11/2
  * <p>
- * desc:
+ * desc:NiceToast
  */
 
 public class NiceToast {
@@ -39,7 +40,14 @@ public class NiceToast {
     }
 
     public NiceToast setText(String text) {
-        ntvNiceToast.setMessage(text);
+        int length = text.length();
+        Log.i("Rair", "(NiceToast.java:44)-setText:->" + length);
+        if (length <= 16) {
+            ntvNiceToast.setMessage(text);
+        } else {
+            setWidth(length * 30 + 80);
+            ntvNiceToast.setMessage(text);
+        }
         return this;
     }
 
@@ -58,15 +66,15 @@ public class NiceToast {
         return this;
     }
 
-    public NiceToast setWidth(int width) {
-        ntvNiceToast.setWidth(width);
-        return this;
-    }
-
     public NiceToast isRound(boolean round) {
         if (!round) {
             ntvNiceToast.setBorderRetangle();
         }
+        return this;
+    }
+
+    private NiceToast setWidth(int width) {
+        ntvNiceToast.setWidth(width);
         return this;
     }
 
@@ -79,11 +87,6 @@ public class NiceToast {
 
     public NiceToast setDuration(int duration) {
         this.duration = duration;
-        return this;
-    }
-
-    public NiceToast setGravity(int gravity) {
-        this.gravity = gravity;
         return this;
     }
 

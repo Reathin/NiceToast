@@ -3,15 +3,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def siteUrl = 'https://github.com/Rairmmd/BoundScrollView'
-def gitUrl = 'https://github.com/Rairmmd/BoundScrollView.git'
-group = "com.rairmmd.boundscrollview"
-version = "1.0.0"       //这个是版本号，必须填写
+def siteUrl = 'https://github.com/Rairmmd/NiceToast'
+def gitUrl = 'https://github.com/Rairmmd/NiceToast.git'
+group = "com.rairmmd.nicetoast"
+version = "1.1.0"       //这个是版本号，必须填写
 
 android {
     compileSdkVersion 26
-
-
 
     defaultConfig {
         minSdkVersion 19
@@ -29,15 +27,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
 
 install {
