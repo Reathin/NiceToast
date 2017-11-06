@@ -2,12 +2,12 @@
 
 ![1]
 ```
-compile 'com.rairmmd.nicetoast:library:1.0.0'
+compile 'com.rairmmd.nicetoast:library:1.1.0'
 ```
 
 ### 使用
 ```
-//字数不要超过10个
+//字数不要超过12个
 NiceToast.newNiceToast(this)
          .setIcon(R.mipmap.icon_warning)//图标（用圆的）
          .setText("Nice Toast")//文字
