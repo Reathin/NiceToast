@@ -101,7 +101,7 @@ class NiceToastView extends RelativeLayout {
     }
 
     public NiceToastView setTextColor(int color) {
-        tvMsg.setTextColor(color);
+        tvMsg.setTextColor(ContextCompat.getColor(context, color));
         return this;
     }
 

@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public void show(View view) {
         NiceToast.newNiceToast(this).setText("Nice Toast!")
                 .alignTop(true)
-                .setTextColor(R.color.colorAccent)
+                .setTextColor(R.color.colorPrimary)
                 .setBgColor(R.color.colorAccent)
                 .setIcon(R.mipmap.ic_launcher_round)
                 .show();
