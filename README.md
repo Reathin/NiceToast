@@ -2,7 +2,7 @@
 
 ![1]
 ```
-compile 'com.rairmmd.nicetoast:library:1.1.0'
+compile 'com.rairmmd.nicetoast:library:1.2.0'
 ```
 
 ### 使用
